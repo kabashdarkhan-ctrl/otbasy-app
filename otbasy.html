@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f4f1ea" />
+  <title>Отбасы — отбасылық жоспар</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles-extra.css" />
+  <link rel="stylesheet" href="./ios.css" />
+</head>
+<body>
+  <section class="auth-screen" id="authScreen">
+    <div class="auth-brand"><span class="brand-mark">О</span><b>Отбасы</b></div>
+    <div class="auth-card">
+      <span class="eyebrow">ОТБАСЫЛЫҚ КЕҢІСТІК</span>
+      <h1>Бәрі бір үйден<br><em>басталады.</em></h1>
+      <p>Жоспарлар, міндеттер және маңызды шешімдер — тек сіздің отбасыңыз үшін жабық кеңістікте.</p>
+      <button class="oauth-btn google" data-provider="google"><span>G</span> Gmail арқылы кіру</button>
+      <button class="oauth-btn apple" data-provider="apple" disabled title="Apple Developer конфигурациясы қажет"><span>●</span> Apple ID · баптау қажет</button>
+      <div class="auth-security"><span>⌾</span><small>Әр отбасының деректері бөлек сақталады.<br>Басқа отбасылар сіздің тапсырмаларыңызды көрмейді.</small></div>
+    </div>
+    <small class="demo-note" id="authStatus">Нақты OAuth қосылымы</small>
+  </section>
+  <div class="app auth-hidden" id="mainApp">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">О</span><div><b>Отбасы</b><small>отбасылық кеңістік</small></div></div>
+      <div class="top-actions"><button class="icon-btn" id="searchBtn" aria-label="Іздеу">⌕</button><button class="avatar" id="profileBtn" aria-label="Отбасы профилі">Д</button></div>
+    </header>
+
+    <main>
+      <section class="greeting">
+        <div><span class="eyebrow" id="todayLabel">БҮГІН</span><h1>Қайырлы таң,<br><em>Дәурен отбасы.</em></h1></div>
+        <button class="add-main" id="addTask"><span>＋</span> Жаңа тапсырма</button>
+      </section>
+
+      <section class="pulse-card">
+        <div class="pulse-head"><div><span class="eyebrow light">ОТБАСЫ ЫРҒАҒЫ</span><h2>Апта жақсы жүріп жатыр</h2></div><div class="score"><strong id="score">72</strong><small>/ 100</small></div></div>
+        <div class="progress"><i id="weekProgress"></i></div>
+        <div class="pulse-meta"><span><b id="doneCount">0</b> тапсырма орындалды</span><span><b>1</b> кедергі бар</span><div class="faces"><i>А</i><i>Д</i><i>М</i><i>+2</i></div></div>
+      </section>
+
+      <nav class="date-tabs" aria-label="Күнді таңдау">
+        <button data-day="yesterday"><span>Кеше</span><b id="yesterdayDate">—</b><small id="yesterdayWeekday">—</small></button>
+        <button data-day="today" class="active"><span>Бүгін</span><b id="todayDate">—</b><small id="todayWeekday">—</small></button>
+        <button data-day="tomorrow"><span>Ертең</span><b id="tomorrowDate">—</b><small id="tomorrowWeekday">—</small></button>
+        <button data-day="week"><span>Апта</span><b id="weekNumber">—</b><small>7 күн</small></button>
+      </nav>
+
+      <section class="focus-section">
+        <div class="section-title"><div><span class="eyebrow">БҮГІНГІ ФОКУС</span><h2 id="sectionHeading">Бүгін не істейміз?</h2></div><button class="filter-btn" id="filterBtn">Барлығы <span>⌄</span></button></div>
+        <div class="task-list" id="taskList"></div>
+      </section>
+
+      <section class="blockers">
+        <div class="section-title"><div><span class="eyebrow coral">БІРГЕ ШЕШЕМІЗ</span><h2>Не кедергі болып тұр?</h2></div><button class="link-btn" id="allProblemsBtn">Барлығын көру →</button></div>
+        <article class="problem-card">
+          <div class="problem-icon">!</div>
+          <div class="problem-copy"><div class="problem-tags"><span>КЕДЕРГІ</span><small>2 күн</small></div><h3>Балалардың үйірме кестесі сәйкес келмейді</h3><p>Айдана пікір қалдырды: «Жұма күнін ауыстырып көрсек қалай?»</p></div>
+          <div class="problem-side"><div class="mini-avatars"><i>А</i><i>Д</i><i>М</i></div><button id="solveBtn">Талқылау · 6</button></div>
+        </article>
+      </section>
+
+      <section class="sprint-section">
+        <div class="section-title"><div><span class="eyebrow">SPRINT 14 · 29 МАУСЫМ — 5 ШІЛДЕ</span><h2>Отбасылық спринт</h2></div><div class="sprint-stat"><b>8 / 12</b><span>аяқталды</span></div></div>
+        <div class="board" id="board">
+          <div class="column" data-status="backlog"><header><span>BACKLOG</span><b>3</b></header><div class="board-items"><article draggable="true" data-id="b1"><small>ҮЙ</small><h4>Балконға гүл таңдау</h4><footer><span class="priority low">↓ ТӨМЕН</span><i>М</i></footer></article><article draggable="true" data-id="b2"><small>ҚАРЖЫ</small><h4>Жазғы бюджет жоспары</h4><footer><span class="priority medium">— ОРТА</span><i>Д</i></footer></article></div><button class="column-add">＋ Идея қосу</button></div>
+          <div class="column" data-status="doing"><header><span>ЖАСАЛУДА</span><b>2</b></header><div class="board-items"><article draggable="true" data-id="b3"><small>ОТБАСЫ</small><h4>Демалыс маршрутын құру</h4><div class="tiny-progress"><i></i></div><footer><span class="priority high">↑ ЖОҒАРЫ</span><i>А</i></footer></article></div></div>
+          <div class="column done-col" data-status="done"><header><span>ДАЙЫН</span><b>8</b></header><div class="board-items"><article draggable="true" data-id="b4"><small>САТЫП АЛУ</small><h4>Апталық азық-түлік</h4><footer><span class="done-label">✓ ОРЫНДАЛДЫ</span><i>Д</i></footer></article></div></div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav"><button class="active" data-nav="home"><span>⌂</span>Басты бет</button><button data-nav="plan"><span>▦</span>Жоспар</button><button class="fab" id="fab">＋</button><button data-nav="sprint"><span>◫</span>Спринт</button><button data-nav="family"><span>♧</span>Отбасы</button></nav>
+  </div>
+
+  <dialog id="taskDialog"><form method="dialog" id="taskForm"><div class="modal-head"><div><span class="eyebrow">ЖАҢА ТАПСЫРМА</span><h2>Не істеу керек?</h2></div><button type="button" class="close" data-close="taskDialog" aria-label="Жабу">×</button></div><label>Атауы<input id="taskName" placeholder="Мысалы, коммуналдық төлемді төлеу" required maxlength="70"></label><div class="form-row"><label>Күні<select id="taskDay"><option value="today">Бүгін</option><option value="tomorrow">Ертең</option><option value="week">Осы апта</option></select></label><label>Басымдығы<select id="taskPriority"><option value="high">Жоғары</option><option value="medium">Орташа</option><option value="low">Төмен</option></select></label></div><label>Жауапты<select id="taskOwner"><option>Өзім</option><option>Отбасы мүшесі</option></select></label><button class="submit-task" value="default">Тапсырма қосу</button></form></dialog>
+  <dialog id="searchDialog"><div class="dialog-body"><div class="modal-head"><div><span class="eyebrow">ЖЫЛДАМ ІЗДЕУ</span><h2>Тапсырманы табу</h2></div><button class="close" data-close="searchDialog" aria-label="Жабу">×</button></div><input id="searchInput" type="search" placeholder="Тапсырма атауын жазыңыз…"><div id="searchResults" class="search-results"></div></div></dialog>
+  <dialog id="discussionDialog"><div class="dialog-body"><div class="modal-head"><div><span class="eyebrow coral">КЕДЕРГІ</span><h2>Отбасылық талқылау</h2></div><button class="close" data-close="discussionDialog" aria-label="Жабу">×</button></div><h3 class="discussion-title">Балалардың үйірме кестесі сәйкес келмейді</h3><div id="comments" class="comments"></div><form id="commentForm"><input id="commentInput" placeholder="Пікіріңізді жазыңыз…" maxlength="160" required><button>Жіберу</button></form></div></dialog>
+  <dialog id="familyDialog"><div class="dialog-body"><div class="modal-head"><div><span class="eyebrow">БІЗДІҢ ОТБАСЫ</span><h2>Отбасы мүшелері</h2></div><button class="close" data-close="familyDialog" aria-label="Жабу">×</button></div><div class="family-list"></div><button class="logout-btn" id="userLogout">Аккаунттан шығу</button></div></dialog>
+  <div class="toast" id="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./supabase-config.js?v=5"></script><script src="./app.js?v=5"></script>
+</body>
+</html>
