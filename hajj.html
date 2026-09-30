@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7f4" />
+    <title>Ұмра мен қажылық — практикалық ойын</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./hajj.css" />
+  </head>
+  <body>
+    <main class="hj-app">
+      <!-- Басты экран -->
+      <section id="home-view" class="home-view">
+        <header class="hj-topbar">
+          <a class="close-link" href="./agartu.html" aria-label="Басты бетке оралу">‹</a>
+          <b>Қажылық симуляторы</b>
+          <button id="open-guide" class="guide-btn" type="button">📖 Нұсқаулық</button>
+        </header>
+
+        <div class="hero">
+          <svg viewBox="0 0 200 150" aria-hidden="true">
+            <defs>
+              <radialGradient id="heroGlow" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#fff6dc" /><stop offset="1" stop-color="#fff6dc" stop-opacity="0" /></radialGradient>
+            </defs>
+            <circle cx="100" cy="70" r="70" fill="url(#heroGlow)" />
+            <ellipse cx="100" cy="128" rx="88" ry="14" fill="#e3ebe5" />
+            <ellipse cx="100" cy="128" rx="60" ry="9" fill="none" stroke="#c6d6cc" stroke-dasharray="3 4" />
+            <path d="M62 54 L100 40 L138 54 L138 122 L100 136 L62 122 Z" fill="#17191a" />
+            <path d="M100 40 L138 54 L138 122 L100 136 Z" fill="#232628" />
+            <path d="M62 68 L100 55 L138 68 L138 76 L100 63 L62 76 Z" fill="#d9a542" />
+            <path d="M112 86 L124 82 L124 104 L112 108 Z" fill="#c9983b" />
+          </svg>
+          <h1>Ұмра мен қажылық</h1>
+          <p>Әр амалды өз қолыңызбен орындаңыз: ихрам, тәлбия, тауаф, сағи, Арафат, Муздалифа, жамарат, құрбандық, шаш алу — бәрі ретімен.</p>
+        </div>
+
+        <div class="gender-switch" role="radiogroup" aria-label="Қажының жынысы">
+          <span>Кейіпкер:</span>
+          <button type="button" data-gender="m" role="radio">👳 Ер адам</button>
+          <button type="button" data-gender="f" role="radio">🧕 Әйел адам</button>
+        </div>
+
+        <div id="mode-list" class="mode-list"></div>
+
+        <p class="hj-note">Ойын Ханафи мазһабы бойынша қысқаша жасалған. Нақты мәселелерді ұстазыңызбен немесе ҚМДБ қажылық нұсқаулығымен тексеріңіз.</p>
+      </section>
+
+      <!-- Ойын экраны -->
+      <section id="play-view" class="play-view" hidden>
+        <header class="play-topbar">
+          <button id="exit-play" class="round-btn" type="button" aria-label="Шығу">×</button>
+          <div class="progress-track"><i id="stage-progress"></i></div>
+          <div class="score-badge">✦ <b id="score">0</b></div>
+        </header>
+        <nav id="journey" class="journey" aria-label="Жол картасы"></nav>
+        <div id="stage" class="stage"></div>
+      </section>
+    </main>
+
+    <!-- Нұсқаулық -->
+    <section id="guide-view" class="guide-view" aria-hidden="true">
+      <header class="guide-head">
+        <button id="close-guide" class="round-btn" type="button" aria-label="Жабу">×</button>
+        <div class="seg" id="guide-tabs">
+          <button type="button" data-g="umrah">Ұмра</button>
+          <button type="button" data-g="hajj">Қажылық</button>
+        </div>
+      </header>
+      <div id="guide-body" class="guide-body"></div>
+    </section>
+
+    <div id="sheet-backdrop" class="sheet-backdrop"></div>
+    <section id="sheet" class="sheet" aria-live="polite"></section>
+    <div id="toast" class="toast"></div>
+
+    <script src="./hajj.js"></script>
+  </body>
+</html>
