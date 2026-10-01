@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7f4" />
+    <title>Сабақтар — Әліппеден Құранға</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./sabaq.css" />
+  </head>
+  <body>
+    <main class="sabaq-app">
+      <header class="sabaq-topbar">
+        <a class="close-link" href="./agartu.html" aria-label="Басты бетке оралу">‹</a>
+        <div class="sabaq-tabs" id="track-tabs" role="tablist">
+          <button class="tab" type="button" data-track="alphabet" role="tab">Әліппе</button>
+          <button class="tab" type="button" data-track="tajweed" role="tab">Тәжуид</button>
+          <button class="tab" type="button" data-track="quran" role="tab">Құран</button>
+        </div>
+        <div class="xp-badge"><span>✦</span><b id="xp-total">0</b></div>
+      </header>
+
+      <section id="map-view" class="map-view">
+        <div id="streak-banner" class="streak-banner"></div>
+        <div id="reco-banner" class="reco-banner" hidden></div>
+        <h1 id="track-heading" class="track-heading"></h1>
+        <p id="track-subheading" class="track-subheading"></p>
+        <div id="unit-list" class="unit-list"></div>
+      </section>
+    </main>
+
+    <section id="lesson-view" class="lesson-view" aria-hidden="true">
+      <header class="lesson-topbar">
+        <button id="close-lesson" class="close-lesson" type="button" aria-label="Жабу">×</button>
+        <div class="progress-track"><i id="lesson-progress"></i></div>
+        <div class="hearts" id="hearts-display"></div>
+      </header>
+      <div class="lesson-body">
+        <span id="step-kicker" class="step-kicker"></span>
+        <h1 id="step-title"></h1>
+        <div id="step-content" class="step-content"></div>
+        <p id="step-feedback" class="step-feedback" hidden></p>
+      </div>
+      <footer class="lesson-footer">
+        <button id="step-action" class="step-action" type="button">Жалғастыру</button>
+      </footer>
+    </section>
+
+    <section id="complete-view" class="complete-view" aria-hidden="true">
+      <div class="complete-medal" dir="rtl" aria-hidden="true">✓</div>
+      <span class="eyebrow">САБАҚ АЯҚТАЛДЫ</span>
+      <h1 id="complete-title">Жарайсыз!</h1>
+      <p id="complete-copy"></p>
+      <div class="complete-stats">
+        <div><span>ЖИНАЛҒАН ҰПАЙ</span><b id="complete-xp">+0</b></div>
+        <div><span>СЕРИЯ</span><b id="complete-streak">0 күн</b></div>
+      </div>
+      <button id="complete-continue" class="step-action" type="button">Картаға оралу</button>
+    </section>
+
+    <div id="sabaq-toast" class="sabaq-toast"></div>
+    <script src="./analytics.js"></script>
+    <script src="./sabaq.js"></script>
+  </body>
+</html>

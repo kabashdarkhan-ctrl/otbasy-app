@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f5f5" />
+    <title>Tartil — Quran Companion</title>
+    <link rel="preconnect" href="https://quran.com" />
+    <link rel="preload" as="font" type="font/ttf" href="https://quran.com/fonts/lang/Figtree/Figtree.ttf" crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href="https://quran.com/fonts/quran/hafs/uthmanic_hafs/UthmanicHafs1Ver18.woff2" crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href="https://quran.com/fonts/quran/surah-names/v1/sura_names.woff2" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./agartu.css" />
+  </head>
+  <body>
+    <main class="phone-shell k-home">
+
+      <header class="k-top">
+        <h1 class="k-title">Agartu</h1>
+        <button class="k-icon-btn k-streak" aria-label="Серия"><span>🔥</span><b>0</b></button>
+        <button class="k-icon-btn" aria-label="Хабарламалар" data-soon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg><i class="k-badge"></i></button>
+      </header>
+
+      <section class="k-card k-prayer" aria-label="Намаз уақыттары">
+        <div class="k-card-head"><span class="k-city"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg> Алматы</span><span class="k-next">Ақшамға дейін <b>2 сағ 14 мин</b></span></div>
+        <div class="k-prayer-grid"><div><b>02:24</b><span>Таң</span></div><div><b>04:09</b><span>Күн</span></div><div><b>11:57</b><span>Бесін</span></div><div><b>17:17</b><span>Екінті</span></div><div class="active"><b>19:39</b><span>Ақшам</span></div><div><b>21:25</b><span>Құптан</span></div></div>
+      </section>
+
+      <section class="k-stories" aria-label="Жаңалықтар">
+        <button class="k-story" data-soon><span class="k-story-ring"><span>۞</span></span><small>Рамазан</small></button><button class="k-story" data-soon><span class="k-story-ring"><span>د</span></span><small>Дұғалар</small></button><button class="k-story seen" data-soon><span class="k-story-ring"><span>ح</span></span><small>Хадис</small></button><button class="k-story seen" data-soon><span class="k-story-ring"><span>ذ</span></span><small>Зікір</small></button><button class="k-story seen" data-soon><span class="k-story-ring"><span>ا</span></span><small>Жаңа курс</small></button>
+      </section>
+
+      <section class="k-card k-goal" aria-label="Бүгінгі мақсат">
+        <div class="k-card-head"><span>Бүгінгі мақсат</span><a href="./sabaq.html">Барлық сабақтар <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></a></div>
+        <a id="continue-lesson" class="k-goal-row" href="./sabaq.html">
+          <span id="continue-icon" class="k-goal-thumb" dir="rtl">ا</span>
+          <div><small id="continue-kicker" class="k-goal-kicker">Сабақты жалғастыру · Әліппе</small><h2 id="continue-title">1-топ: ا ب ت ث</h2><p id="continue-meta">0 / 13 сабақ өтілді</p><div class="k-progress"><i id="continue-bar" style="width:0%"></i></div></div>
+          <span class="k-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+        </a>
+      </section>
+
+      <section class="k-card k-services" aria-label="Сервистер">
+        <a class="k-tile" href="./sabaq.html"><span class="k-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></svg></span><span>Сабақтар</span></a>
+        <a class="k-tile" href="./diagnosis.html"><span class="k-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span><span>Диагностика</span></a>
+        <button class="k-tile" data-open-mushaf><span class="k-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6c-2-1.5-5-2-8-1.5v14c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-14c-3-.5-6 0-8 1.5z"/><path d="M12 6v14"/></svg></span><span>Мұсхаф</span></button>
+        <button class="k-tile" id="khatm-edge"><span class="k-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></span><span>Хатым</span></button>
+        <button class="k-tile" id="start-memorization"><span class="k-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span><span>Жаттау</span></button>
+        <a class="k-tile" href="./hajj.html"><span class="k-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l8-3 8 3v11l-8 3-8-3z"/><path d="M4 10l8 3 8-3"/></svg></span><span>Қажылық</span></a>
+      </section>
+
+      <section class="k-section">
+        <div class="k-section-head"><h2>Курстар</h2><a href="./sabaq.html">Барлығы</a></div>
+        <div class="k-card k-courses">
+          <a class="k-course" href="./sabaq.html"><span class="k-course-icon">ا</span><div><b>Әліппе / Тәжуид / Құран</b><small>Оқытушы · Ерғали Алпысбаев</small></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></a>
+          <a class="k-course" href="#" data-soon><span class="k-course-icon">۞</span><div><b>Дәрет алу &amp; намаз оқу</b><small><span class="k-chip">Тегін</span></small></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></a>
+          <a class="k-course soon" href="#" data-soon><span class="k-course-icon">ف</span><div><b>Ханафи фиқһ негіздері</b><small><span class="k-chip dark">Жақында</span></small></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></a>
+        </div>
+      </section>
+
+      <nav class="k-nav">
+        <button class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg><span>Басты</span></button>
+        <button data-soon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg><span>Чат</span></button>
+        <button data-soon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>Профиль</span></button>
+      </nav>
+    </main>
+
+    <div id="drawer-backdrop" class="drawer-backdrop"></div>
+    <aside id="khatm-drawer" class="khatm-drawer" aria-hidden="true">
+      <header><div><span>ТҰРАҚТЫ ҚҰЛШЫЛЫҚ</span><h2>Құран хатымы</h2></div><button id="close-khatm" aria-label="Жабу">×</button></header>
+      <div id="khatm-content"></div>
+    </aside>
+
+    <section id="mushaf-view" class="mushaf-view" aria-hidden="true">
+      <header class="mushaf-header">
+        <button id="close-mushaf" aria-label="Артқа">‹ <span>Surahs</span></button>
+        <div class="mushaf-title">
+          <small id="mushaf-page-label">page 1, Juz' 1</small>
+          <h2 id="mushaf-surah-title">Surat Al-Fatihah</h2>
+        </div>
+        <div class="mushaf-header-actions"><button aria-label="Bookmark">♡</button><button aria-label="More">•••</button></div>
+      </header>
+      <div class="mushaf-paper"><div class="mushaf-surah-ribbon" id="mushaf-ribbon-title">Surat Al-Fatihah</div><div id="mushaf-loading" class="mushaf-loading">Мұсхаф жүктелуде…</div><div id="mushaf-verses" class="mushaf-verses" dir="rtl"></div></div>
+      <footer class="mushaf-controls"><button id="previous-page" aria-label="Алдыңғы бет">‹</button><button id="mark-page-read">Оқылды ✓</button><button id="next-page" aria-label="Келесі бет">›</button><div class="mushaf-player"><button aria-label="Play">▶</button><div><strong>Mishary Al-Afasy</strong><span>gapless recitation</span></div></div></footer>
+    </section>
+
+    <section id="memorization-view" class="memorization-view" aria-hidden="true" aria-labelledby="memorization-title">
+      <header class="memorization-header"><button id="close-memorization" aria-label="Жабу">×</button><div><span>ЖАТТАУ ТЕКСЕРІСІ</span><h2 id="memorization-title">Ауызша тапсыру</h2></div><i>۞</i></header>
+      <div class="memorization-content">
+        <label class="memorization-select">Сүрені таңдаңыз
+          <select id="memorization-surah"></select>
+        </label>
+        <div class="memorization-instruction"><b>Мәтін көрсетілмейді</b><p>Сүрені жатқа, анық және ретімен оқыңыз. Аяқтағанда «Тапсыру» түймесін басыңыз.</p></div>
+        <div id="recording-state" class="recording-state"><span class="recording-dot"></span><div><b>GPT Voice дайын</b><small>Дауыстық тапсыруды бастау үшін төмендегі батырманы басыңыз</small></div><strong id="recording-time">00:00</strong></div>
+        <div class="voice-orb" aria-hidden="true"><i></i><i></i><i></i><b>GPT</b></div>
+        <button id="record-memorization" class="record-button" type="button"><span>✦</span> Дауыстық тапсыруды бастау</button>
+        <div class="voice-prototype-note"><b>Прототип</b><span>GPT Voice тыңдап, оқуды аяқтаған соң фидбэк береді.</span></div>
+        <button id="submit-memorization" class="submit-memorization" type="button" disabled>Оқуды аяқтау және фидбэк алу</button>
+        <section id="memorization-feedback" class="memorization-feedback" hidden aria-live="polite"></section>
+      </div>
+    </section>
+
+    <div id="agartu-toast" class="agartu-toast"></div>
+    <script src="./analytics.js"></script>
+    <script src="./agartu.js"></script>
+  </body>
+</html>
