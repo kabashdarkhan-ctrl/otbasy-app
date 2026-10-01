@@ -99,7 +99,7 @@ function submitMemorization() {
 function openDrawer() { renderKhatm(); drawer.classList.add("open"); backdrop.classList.add("open"); drawer.setAttribute("aria-hidden", "false"); }
 function closeDrawer() { drawer.classList.remove("open"); backdrop.classList.remove("open"); drawer.setAttribute("aria-hidden", "true"); }
 
-document.querySelector("#khatm-edge").onclick = openDrawer;
+document.querySelector("#khatm-edge")?.addEventListener("click", openDrawer);
 document.querySelector("#close-khatm").onclick = closeDrawer;
 backdrop.onclick = closeDrawer;
 setupMemorization();
