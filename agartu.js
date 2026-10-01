@@ -103,7 +103,7 @@ document.querySelector("#khatm-edge").onclick = openDrawer;
 document.querySelector("#close-khatm").onclick = closeDrawer;
 backdrop.onclick = closeDrawer;
 setupMemorization();
-document.querySelector("#start-memorization").onclick = openMemorization;
+document.querySelector("#start-memorization")?.addEventListener("click", openMemorization);
 document.querySelector("#open-memorization-info")?.addEventListener("click", () => { openMemorization(); toast("Сөздік сәйкестік пен тәжуидке назар аударыңыз"); });
 document.querySelector("#close-memorization").onclick = closeMemorization;
 document.querySelector("#record-memorization").onclick = () => {

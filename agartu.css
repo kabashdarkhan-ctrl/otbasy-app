@@ -255,3 +255,4 @@ html,body{background:#e6e6e6}
 .k-book small{color:var(--k-muted);font-size:12.5px}
 .k-book>svg{width:18px;height:18px;color:#c4c4c4}
 .k-book-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:var(--k-tint);color:var(--orange);font:700 19px "Noto Naskh Arabic",serif}
+.k-home .k-services:not(.k-course-grid){grid-template-columns:repeat(4,1fr)}
