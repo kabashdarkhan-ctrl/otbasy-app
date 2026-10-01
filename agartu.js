@@ -210,3 +210,60 @@ function renderContinueLesson() {
 }
 renderContinueLesson();
 window.addEventListener("pageshow", renderContinueLesson);
+
+const KAABA = { lat: 21.4225, lon: 39.8262 };
+const ALMATY = { lat: 43.2389, lon: 76.8897 };
+const qiblaSheet = document.querySelector("#qibla-sheet");
+let qiblaBearing = null;
+let qiblaListening = false;
+
+function bearingToKaaba({ lat, lon }) {
+  const rad = deg => deg * Math.PI / 180;
+  const dLon = rad(KAABA.lon - lon);
+  const y = Math.sin(dLon) * Math.cos(rad(KAABA.lat));
+  const x = Math.cos(rad(lat)) * Math.sin(rad(KAABA.lat)) - Math.sin(rad(lat)) * Math.cos(rad(KAABA.lat)) * Math.cos(dLon);
+  return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+}
+
+function setQiblaBearing(position, placeLabel) {
+  qiblaBearing = bearingToKaaba(position);
+  document.querySelector("#qibla-arrow").style.transform = `rotate(${qiblaBearing}deg)`;
+  document.querySelector("#qibla-degrees").textContent = `${Math.round(qiblaBearing)}°`;
+  document.querySelector("#qibla-hint").textContent = `${placeLabel}. Телефонды көлденең ұстаңыз, 🕋 белгісі Қағбаны көрсетеді.`;
+}
+
+function onQiblaOrientation(event) {
+  const heading = event.webkitCompassHeading ?? (event.absolute && event.alpha != null ? 360 - event.alpha : null);
+  if (heading == null || qiblaBearing == null) return;
+  document.querySelector("#qibla-dial").style.transform = `rotate(${-heading}deg)`;
+}
+
+async function startQiblaCompass() {
+  if (qiblaListening || !("DeviceOrientationEvent" in window)) return;
+  try {
+    if (typeof DeviceOrientationEvent.requestPermission === "function" && await DeviceOrientationEvent.requestPermission() !== "granted") return;
+  } catch { return; }
+  window.addEventListener("deviceorientationabsolute", onQiblaOrientation);
+  window.addEventListener("deviceorientation", onQiblaOrientation);
+  qiblaListening = true;
+}
+
+function openQibla() {
+  qiblaSheet.classList.add("open");
+  qiblaSheet.setAttribute("aria-hidden", "false");
+  setQiblaBearing(ALMATY, "Алматы бойынша");
+  navigator.geolocation?.getCurrentPosition(pos => setQiblaBearing({ lat: pos.coords.latitude, lon: pos.coords.longitude }, "Сіздің орныңыз бойынша"), () => {}, { timeout: 8000, maximumAge: 600000 });
+  startQiblaCompass();
+}
+
+function closeQibla() { qiblaSheet.classList.remove("open"); qiblaSheet.setAttribute("aria-hidden", "true"); }
+
+document.querySelector("#open-qibla").addEventListener("click", openQibla);
+document.querySelector("#close-qibla").addEventListener("click", closeQibla);
+qiblaSheet.addEventListener("click", event => { if (event.target === qiblaSheet) closeQibla(); });
+
+const booksSheet = document.querySelector("#books-sheet");
+function toggleBooks(open) { booksSheet.classList.toggle("open", open); booksSheet.setAttribute("aria-hidden", String(!open)); }
+document.querySelector("#open-books").addEventListener("click", () => toggleBooks(true));
+document.querySelector("#close-books").addEventListener("click", () => toggleBooks(false));
+booksSheet.addEventListener("click", event => { if (event.target === booksSheet) toggleBooks(false); });

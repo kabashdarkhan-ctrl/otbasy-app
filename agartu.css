@@ -205,3 +205,53 @@ html,body{background:#e6e6e6}
   .k-stories{display:none}
   .k-prayer-grid span{display:none}
 }
+
+/* Қағба бағыты */
+.k-qibla{color:var(--orange)}
+.qibla-sheet{position:fixed;z-index:30;inset:0;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.28);opacity:0;pointer-events:none;transition:opacity .25s}
+.qibla-sheet.open{opacity:1;pointer-events:auto}
+.qibla-panel{width:min(100%,470px);padding:18px 20px calc(26px + env(safe-area-inset-bottom));border-radius:24px 24px 0 0;background:#fff;text-align:center;transform:translateY(40px);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.qibla-sheet.open .qibla-panel{transform:none}
+.qibla-panel header{display:flex;justify-content:space-between;align-items:flex-start;text-align:left}
+.qibla-panel header span{font-size:10px;font-weight:800;letter-spacing:.12em;color:var(--orange)}
+.qibla-panel h2{margin:3px 0 0;font-size:22px}
+.qibla-panel header button{width:36px;height:36px;border:0;border-radius:50%;background:#f1f1f1;font-size:22px;cursor:pointer}
+.qibla-compass{display:grid;place-items:center;margin:18px 0 10px}
+.qibla-dial{position:relative;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,#fff 58%,var(--k-tint) 59%,var(--k-tint) 100%);box-shadow:inset 0 0 0 2px #ffe0c2;transition:transform .2s linear}
+.qibla-dial b{position:absolute;top:10px;left:50%;transform:translateX(-50%);font-size:14px;color:var(--orange2)}
+.qibla-arrow{position:absolute;inset:0;display:block;transition:transform .4s}
+.qibla-arrow:before{content:"";position:absolute;left:50%;top:38px;bottom:50%;width:4px;margin-left:-2px;border-radius:4px;background:var(--k-grad)}
+.qibla-arrow span{position:absolute;top:14px;left:50%;transform:translateX(-50%);font-size:24px;font-style:normal}
+.qibla-degrees{display:block;font-size:30px;font-weight:800}
+.qibla-hint{margin:4px auto 0;max-width:300px;color:var(--k-muted);font-size:13px;line-height:1.45}
+
+/* Курстар — сервистер сияқты плиткалар */
+.k-course-grid{grid-template-columns:repeat(3,1fr);gap:4px;padding:14px 8px 12px}
+.k-course-grid .k-tile{font-size:11.5px;line-height:1.25;padding:0 4px}
+.k-tile-icon{position:relative}
+.k-tile-badge{position:absolute;top:-7px;right:-14px;padding:2px 6px;border-radius:7px;background:#fff;color:var(--orange);border:1px solid #ffd2a8;font:800 9px Manrope,sans-serif;font-style:normal;white-space:nowrap}
+.k-tile-badge.dark{background:#5a5a5a;border-color:#5a5a5a;color:#fff}
+.k-tile.soon{color:#b5b5b5}
+.k-tile.soon .k-tile-icon{background:#e3e3e3;box-shadow:none}
+.k-home .k-services:not(.k-course-grid){grid-template-columns:repeat(5,1fr)}
+.k-course-grid{grid-template-columns:repeat(4,1fr);gap:12px 2px;padding:14px 6px 12px}
+.k-course-grid .k-tile{font-size:10.5px;padding:0 2px}
+.k-tile-badge{right:-12px}
+
+/* Кітаптар */
+.k-home .k-services:not(.k-course-grid){grid-template-columns:repeat(6,1fr)}
+.k-sheet{position:fixed;z-index:30;inset:0;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.28);opacity:0;pointer-events:none;transition:opacity .25s}
+.k-sheet.open{opacity:1;pointer-events:auto}
+.k-sheet-panel{width:min(100%,470px);padding:18px 16px calc(20px + env(safe-area-inset-bottom));border-radius:24px 24px 0 0;background:#fff;transform:translateY(40px);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.k-sheet.open .k-sheet-panel{transform:none}
+.k-sheet-panel header{display:flex;justify-content:space-between;align-items:flex-start;margin:0 4px 10px}
+.k-sheet-panel header span{font-size:10px;font-weight:800;letter-spacing:.12em;color:var(--orange)}
+.k-sheet-panel h2{margin:3px 0 0;font-size:22px}
+.k-sheet-panel header button{width:36px;height:36px;border:0;border-radius:50%;background:#f1f1f1;font-size:22px;cursor:pointer}
+.k-book{width:100%;display:flex;align-items:center;gap:12px;padding:10px 4px;border:0;background:none;text-align:left;font-family:inherit;color:var(--k-ink);cursor:pointer}
+.k-book+.k-book{border-top:1px solid var(--k-line)}
+.k-book div{flex:1;display:grid;gap:2px}
+.k-book b{font-size:15px}
+.k-book small{color:var(--k-muted);font-size:12.5px}
+.k-book>svg{width:18px;height:18px;color:#c4c4c4}
+.k-book-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:var(--k-tint);color:var(--orange);font:700 19px "Noto Naskh Arabic",serif}
