@@ -4,6 +4,7 @@ create table if not exists public.projects (
   family_id uuid not null references public.families(id) on delete cascade,
   title text not null,
   status text not null default 'active',
+  items jsonb not null default '[]'::jsonb,
   created_by uuid references auth.users(id),
   created_at timestamptz not null default now()
 );
@@ -16,3 +17,6 @@ create policy "family members update projects" on public.projects for update
   using (exists (select 1 from public.family_members m where m.family_id = projects.family_id and m.user_id = auth.uid()));
 create policy "family members delete projects" on public.projects for delete
   using (exists (select 1 from public.family_members m where m.family_id = projects.family_id and m.user_id = auth.uid()));
+
+-- Кесте бұрын жасалған болса:
+alter table public.projects add column if not exists items jsonb not null default '[]'::jsonb;
