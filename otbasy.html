@@ -65,10 +65,8 @@
       </section>
 
       <section class="projects-section" id="projects">
-        <div class="section-title"><div><span class="eyebrow">ЖОБАЛАР</span><h2>Отбасылық жобалар</h2></div></div>
-        <div class="task-list">
-          <article class="task project-card"><div>🕋</div><div><h3>Ұмра практикасы</h3><div class="task-meta"><span class="category">ЖОБА</span><span>Белсенді</span></div></div><span class="owner">Ө</span></article>
-        </div>
+        <div class="section-title"><div><span class="eyebrow">ЖОБАЛАР</span><h2>Отбасылық жобалар</h2></div><button class="filter-btn" id="addProject">＋ Жоба</button></div>
+        <div class="task-list" id="projectList"></div>
       </section>
 
       <section class="sprint-section">
@@ -88,7 +86,8 @@
   <dialog id="searchDialog"><div class="dialog-body"><div class="modal-head"><div><span class="eyebrow">ЖЫЛДАМ ІЗДЕУ</span><h2>Тапсырманы табу</h2></div><button class="close" data-close="searchDialog" aria-label="Жабу">×</button></div><input id="searchInput" type="search" placeholder="Тапсырма атауын жазыңыз…"><div id="searchResults" class="search-results"></div></div></dialog>
   <dialog id="discussionDialog"><div class="dialog-body"><div class="modal-head"><div><span class="eyebrow coral">КЕДЕРГІ</span><h2>Отбасылық талқылау</h2></div><button class="close" data-close="discussionDialog" aria-label="Жабу">×</button></div><h3 class="discussion-title">Балалардың үйірме кестесі сәйкес келмейді</h3><div id="comments" class="comments"></div><form id="commentForm"><input id="commentInput" placeholder="Пікіріңізді жазыңыз…" maxlength="160" required><button>Жіберу</button></form></div></dialog>
   <dialog id="familyDialog"><div class="dialog-body"><div class="modal-head"><div><span class="eyebrow">БІЗДІҢ ОТБАСЫ</span><h2>Отбасы мүшелері</h2></div><button class="close" data-close="familyDialog" aria-label="Жабу">×</button></div><div class="family-list"></div><button class="logout-btn" id="userLogout">Аккаунттан шығу</button></div></dialog>
+  <dialog id="projectDialog"><form method="dialog" id="projectForm"><div class="modal-head"><div><span class="eyebrow">ЖАҢА ЖОБА</span><h2>Жоба атауы</h2></div><button type="button" class="close" data-close="projectDialog" aria-label="Жабу">×</button></div><label>Атауы<input id="projectName" placeholder="Мысалы: Ұмра практикасы" required></label><button class="submit-task" value="ok">Жобаны сақтау</button></form></dialog>
   <div class="toast" id="toast"></div>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./supabase-config.js?v=5"></script><script src="./app.js?v=5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./supabase-config.js?v=5"></script><script src="./app.js?v=6"></script>
 </body>
 </html>
